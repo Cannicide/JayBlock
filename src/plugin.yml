@@ -1,0 +1,19 @@
+name: JayBlock
+description: Blocks specified commands.
+version: 1.0.0
+author: Cannicide
+main: us.cannicide.jayblock.JayBlock
+permissions:
+  jayblock.bypass:
+    description: Bypasses command-blocker.
+    default: false
+  jayblock.reload:
+    description: Allows reloading the command-blocker config.
+    default: false
+  jayblock.nonexist.bypass:
+    description: Allows bypassing the nonexist system.
+    default: false
+commands:
+  jayblock:
+    description: All jayblock commands.
+    usage: /jayblock [reload]

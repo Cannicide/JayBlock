@@ -1,0 +1,40 @@
+# JayBlock by Cannicide/JayCraft2
+# Plugin that can block commands and entire command prefixes (ex: all "minecraft:" commands)
+
+# Do not modify
+version: 0.0.0
+
+# Messages sent by plugin, supports minecraft color codes
+messages:
+
+  # Message to be sent when a command is blocked. The following variables in {} are supported.
+  # {message} = The full command that the user typed (only usable once).
+  # {blocked-cmd} = The blocked command that the user's command matched (only usable once).
+  # {nl} = New line in the message (usable multiple times).
+  isblocked: "&3You do not have permission to use that command.{nl}&3Your command: &b{message}{nl}&3Matched blocked command: &b{blocked-cmd}"
+
+  # Help/command(s) explanation message. The following variables in {} are supported.
+  # {nl} = New line in the message (usable multiple times).
+  help: "&b/jayblock reload &f- Reload the JayBlock command-blocker config."
+
+  # Message sent when a command does not exist (if enabled). The following variables in {} are supported.
+  # {nl} = New line in the message (usable multiple times).
+  nonexist: "&3Unknown command. Type &b/help&3 for help."
+
+# Whether or not to use a custom "command does not exist" message. The message can be customized in the above section.
+# If "allow-unregistered" is set to true, this option is automatically disabled.
+nonexist-enabled: true
+
+# Whether or not to allow blocking of unregistered and non-plugin commands.
+# If set to false, unregistered/vanilla/bukkit commands will not be scanned by JayBlock.
+# If set to false, all minecraft/bukkit commands can only be used with prefixes (ex: "minecraft:give" or "bukkit:pl")
+# If set to true, the "nonexist-enabled" feature will be indirectly disabled.
+allow-unregistered: false
+
+# Blocked commands and prefixes without the initial slash. All registered aliases of blocked commands will also be blocked.
+# Supports commands (ex: "plugins")
+# Supports prefixes (ex: "minecraft:")
+# Supports specific command arguments (ex: "give @p" - prevents giving items to the closest player, but allows giving to any other selector)
+blocked:
+  - pl
+  - 'minecraft:'
