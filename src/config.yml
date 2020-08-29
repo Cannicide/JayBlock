@@ -1,5 +1,6 @@
 # JayBlock by Cannicide/JayCraft2
 # Plugin that can block commands and entire command prefixes (ex: all "minecraft:" commands)
+# Config can be found here: https://github.com/Cannicide/JayBlock/blob/master/src/config.yml
 
 # Do not modify
 version: 0.0.0

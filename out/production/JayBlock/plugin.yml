@@ -6,9 +6,12 @@ main: us.cannicide.jayblock.JayBlock
 permissions:
   jayblock.bypass:
     description: Bypasses command-blocker.
-    default: op
+    default: false
   jayblock.reload:
     description: Allows reloading the command-blocker config.
+    default: false
+  jayblock.nonexist.bypass:
+    description: Allows bypassing the nonexist system.
     default: false
 commands:
   jayblock:
