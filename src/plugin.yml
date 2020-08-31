@@ -1,6 +1,6 @@
 name: JayBlock
 description: Blocks specified commands.
-version: 1.0.0
+version: 1.1.0
 author: Cannicide
 main: us.cannicide.jayblock.JayBlock
 permissions:

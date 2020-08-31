@@ -96,12 +96,16 @@ public class JayBlock extends JavaPlugin {
             List<String> blocked = config.getStringList("blocked");
 
             if (!msg.startsWith("minecraft:") && !msg.startsWith("bukkit:") && Bukkit.getServer().getPluginCommand(msg.split(" ")[0]) == null && !config.getBoolean("allow-unregistered")) {
-                //Command does not exist
-                if (config.getBoolean("nonexist-enabled")) {
-                    e.setCancelled(true);
-                    e.getPlayer().sendMessage(getColorString("messages.nonexist").replaceAll("\\{nl}", "\n"));
+                //Command may not exist
+
+                if (!(config.getBoolean("worldedit-exists") && msg.startsWith("/"))) {
+                    //Command doesn't exist and isn't worldedit
+                    if (config.getBoolean("nonexist-enabled")) {
+                        e.setCancelled(true);
+                        e.getPlayer().sendMessage(getColorString("messages.nonexist").replaceAll("\\{nl}", "\n"));
+                    }
+                    return;
                 }
-                return;
             }
 
             if (e.getPlayer().hasPermission("jayblock.bypass")) return;
