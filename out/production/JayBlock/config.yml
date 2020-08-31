@@ -32,6 +32,10 @@ nonexist-enabled: true
 # If set to true, the "nonexist-enabled" feature will be indirectly disabled.
 allow-unregistered: false
 
+# If set to false, worldedit commands are treated like nonexistent commands and are blocked by nonexist.
+# If set to true, nonexist will not block WE commands. However, it will not override the "unknown command" message for WE.
+worldedit-exists: true
+
 # Blocked commands and prefixes without the initial slash. All registered aliases of blocked commands will also be blocked.
 # Supports commands (ex: "plugins")
 # Supports prefixes (ex: "minecraft:")
